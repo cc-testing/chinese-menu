@@ -1,0 +1,139 @@
+body {
+    font-family: sans-serif;
+    background-color: #ffffff;
+    color: forestgreen;
+}
+
+#specials,
+.columns {
+    width: 800px;
+    margin: 0 auto;  /* centers selected content --  good trick    */
+    border: 2px solid red;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#specials td {
+    line-height: 0.85;
+}
+
+.specialDishes thead td {  /*  labels  plain ... friend rice   */
+    color: red;
+    font-size: 10px;
+    text-align: right;
+    padding-left: 17px;   /* padding to flush text .. plain ..fried rice   */
+}
+
+.specialDishes thead td:nth-child(3) {   /* for SPECIAL DISHES text   ... nth-chiild  the 3rd child of the parent get this rule applied. counting starts at 1  .; here the 3rd td of the thead for class .specialDishes
+  other options  ..  first-child    last-child  do exactly that used the most in bottoms in a navigation bar  for example   last-child  border right:0px  .. other keywords are EVEN and ODD instead of nth-child*/
+    font-size: 22px;
+    font-weight: bold;
+    text-align: left;
+    padding:0;  /* special lists aligned to left by removing padding  */
+    text-transform: lowercase;  /*  make it lowercase  so VARIANT FONT can work*/
+    font-variant: small-caps;   /* use caps */
+    letter-spacing: 1px;
+}
+
+.specialDishes tbody td {  /* adds dots to menu items  */
+    border-bottom: 2px dotted forestgreen;
+    text-align: right;
+}
+
+.specialDishes tbody td:nth-child(3) { /*  targeted 3rd td in tbody to control width   */
+    width: 285px;
+    text-align: left;
+}
+
+/*  END OF SPECIALS  */
+
+.columns {   /*  overriden the values set in #specials to reuse some of it  .. you can choose to duplicate */
+    border: 0;
+    padding: 0;
+}
+
+.col {
+    float: left;
+    width: 360px;  /* needs width so they can float and be next to each other .. 400-8(margin both sides=392    360 now to create a gutter */
+    margin: 4px;
+    padding-right: 40px;  /*   */
+
+}
+
+.col:last-child {
+    float: right;
+    padding:0;  /* so it does not move to the left   */
+}
+
+.columns h1,  /*  turing headers in columns to red    */
+.columns h2,
+.columns h3,
+.columns h4{
+    color: red;
+    text-align:center;
+}
+
+.hours,   /*  div tag for hours    there is par   they need to be centered but green  */
+.columns p {
+    text-align: center;
+}
+
+.columns p {  /*  text for P "all dishes.." needs to be red  */
+    color: red;
+    font-size: 14px;
+}
+
+.labels {
+   /* overflow: hidden;    /* when you float things they need to know how height it needs to be , lack of this will not show .. overflow counter attack the float.  using the clear=both; will require to add this to each label    <div class="clearfix"> </div>  and then create a .clearfix {clear=both;}   .... does not apply due to below  ".labe;s span" no longer being used since content is not being floated*/
+    color: red;
+    font-size: 12px;
+}
+/*  did not work   switch over the text
+.labels span {
+    float: right;
+}  */
+
+/*  does not need it since due to .labels class
+.labels span {
+    color:red;
+    font-size:12px;
+}
+*/
+
+.labels span:first-child {  /* w crispy noodles   text    first SPAN child to set width  */
+    width: 290px;    /* was 330  */
+    display: inline-block;   /* span is inline  goes to block  so width can kick it ...  */
+    text-align: center;
+}
+
+.labels span:last-child {   /* relates to the SM. label */
+    margin-left: 20px;  /* more space   */
+    display: inline-block;
+}
+
+.itemPrice {
+    float: right; /* move prices to the right  */
+
+}
+
+.spicy {
+    color: red;  /* making spicy items red text   */
+
+.spicy .itemNumber {
+    background: url(pepper.gif) no-repeat 31px 5px;
+    padding-right: 16px;
+}
+
+.columns .col:last-child .spicy .itemNumber {
+    background-position-x: 21px;
+}
+
+.lunchSpecials {
+    border-bottom: 7px solid red;  /* adding the border to the DIV for lunch specials  */
+    padding-bottom: 10px;  /* creating a space at the bottom  */
+}
+
+.itemPrice.small {   /* <span class=" foo bar">    span has two classes in it so when this is created in CSS you ned a period to unite them    not a space   .itemPrice.small */
+    margin-left: 20px;
+}
+
